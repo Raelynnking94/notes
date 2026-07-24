@@ -1,0 +1,41 @@
+.transactions h1 {
+  margin-bottom: 32px;
+  font-size: 32px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+}
+
+.transactions-list {
+  overflow-x: auto;
+}
+
+.text-positive {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.text-negative {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 12px;
+}

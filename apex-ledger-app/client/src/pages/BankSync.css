@@ -1,0 +1,70 @@
+.bank-sync h1 {
+  margin-bottom: 32px;
+  font-size: 32px;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header-actions h2 {
+  margin: 0;
+}
+
+.bank-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.text-muted {
+  color: #999;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.connections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.connection-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.connection-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+}
+
+.connection-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.features-list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.features-list li {
+  padding: 8px 0;
+  color: #333;
+}

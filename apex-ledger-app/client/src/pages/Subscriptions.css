@@ -1,0 +1,93 @@
+.subscriptions h1 {
+  margin-bottom: 8px;
+  font-size: 32px;
+}
+
+.subscriptions .subtitle {
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.tier-card {
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tier-card.active {
+  border-color: #667eea;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+}
+
+.tier-card h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 8px;
+}
+
+.period {
+  font-size: 16px;
+  color: #666;
+  font-weight: 400;
+}
+
+.features {
+  list-style: none;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.features li {
+  padding: 8px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.tier-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.tier-actions button {
+  width: 100%;
+}
+
+.trial-card {
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+}
+
+.trial-card h2 {
+  color: white;
+  margin-bottom: 12px;
+}
+
+.trial-card p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.trial-card .btn {
+  display: inline-block;
+}
