@@ -1,0 +1,51 @@
+name: Apex Ledger Tests
+
+on:
+  push:
+    branches: [ main, apex-ledger-app-build ]
+  pull_request:
+    branches: [ main, apex-ledger-app-build ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      mongodb:
+        image: mongo:6.0
+        options: >-
+          --health-cmd mongosh
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 27017:27017
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install backend dependencies
+      run: npm ci
+    
+    - name: Run backend tests
+      run: npm test
+      env:
+        MONGODB_URI: mongodb://localhost:27017/apex-ledger-test
+        JWT_SECRET: test-secret-key
+    
+    - name: Install frontend dependencies
+      working-directory: ./client
+      run: npm ci
+    
+    - name: Build frontend
+      working-directory: ./client
+      run: npm run build
+    
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
