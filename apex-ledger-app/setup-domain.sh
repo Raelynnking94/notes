@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Apex Ledger - Custom Domain Setup
+# Connect your domain to DigitalOcean App
+
+echo "🌐 Custom Domain Setup Guide"
+echo "============================="
+echo ""
+
+echo "Step 1: Point Your Domain to DigitalOcean"
+echo ""
+echo "1. Go to your domain registrar (GoDaddy, Namecheap, etc.)"
+echo "2. Find DNS Settings"
+echo "3. Add these records:"
+echo ""
+echo "Type: A Record"
+echo "Name: @ (or blank)"
+echo "Value: Get from DigitalOcean (see Step 2)"
+echo "TTL: 3600"
+echo ""
+echo "Type: CNAME Record"
+echo "Name: www"
+echo "Value: @ (your root domain)"
+echo "TTL: 3600"
+echo ""
+
+echo "Step 2: Get IP from DigitalOcean"
+echo ""
+echo "1. Go to: https://cloud.digitalocean.com/apps"
+echo "2. Select: apex-ledger"
+echo "3. Go to: Settings → Domains"
+echo "4. Click: Add Domain"
+echo "5. Enter your domain: apexledger.com"
+echo "6. Copy the IP address shown"
+echo ""
+
+echo "Step 3: Configure App"
+echo ""
+echo "Update app.yaml with:"
+echo ""
+echo "domains:"
+echo "- name: apexledger.com"
+echo "- name: www.apexledger.com"
+echo ""
+
+echo "Step 4: Deploy"
+echo ""
+echo "doctl apps update apex-ledger --spec app.yaml"
+echo ""
+
+echo "Step 5: Verify SSL Certificate"
+echo ""
+echo "DigitalOcean automatically:"
+echo "  ✅ Creates SSL certificate"
+echo "  ✅ Renews automatically"
+echo "  ✅ Redirects HTTP → HTTPS"
+echo ""
+
+echo "⏱️  DNS propagation takes 15-30 minutes"
+echo ""
+echo "Test your domain:"
+echo "  curl -I https://apexledger.com"
+echo ""
